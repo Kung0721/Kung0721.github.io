@@ -1,0 +1,135 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>三區段範例網頁</title>
+  <style>
+    :root{
+      --nav-height: 64px;
+      --banner-height: 440px; /* 高度x2 */
+      --accent: #2b6cb0;
+      --bg: #f7f7f8;
+      --card: #ffffff;
+      --gap: 24px;
+    }
+    *{box-sizing: border-box}
+    html {
+      scroll-behavior: smooth; /* 平滑捲動 */
+    }
+    body{
+      margin:0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Noto Sans TC", "Helvetica Neue", Arial;
+      background: var(--bg);
+      color:#111;
+      line-height:1.8;
+    }
+
+    /* Navigator 置頂 */
+    .nav{
+      position:sticky;
+      top:0;
+      left:0;
+      width:100%;
+      height:var(--nav-height);
+      background:linear-gradient(90deg,var(--accent), #2c5282);
+      color:white;
+      display:flex;
+      align-items:center;
+      padding:0 20px;
+      gap:20px;
+      z-index:1000;
+      box-shadow:0 2px 6px rgba(10,10,10,0.12);
+    }
+    .nav .brand{
+      font-weight:700;
+      font-size:20px;
+      margin-right:24px;
+    }
+    .nav nav{display:flex; gap:16px}
+    .nav a{
+      color:rgba(255,255,255,0.95);
+      text-decoration:none;
+      padding:8px 12px;
+      border-radius:8px;
+      transition: all 0.2s ease;
+    }
+    .nav a:hover{
+      background:rgba(255,255,255,0.08);
+      transform: scale(1.1);
+    }
+
+    main{max-width:1100px; margin:20px auto; padding:0 16px}
+    section{background:var(--card); border-radius:12px; overflow:hidden; margin-bottom:var(--gap); box-shadow:0 6px 18px rgba(15,15,15,0.04)}
+
+    .banner{
+      height:var(--banner-height);
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      font-size:28px;
+      font-weight:600;
+      color:white;
+      letter-spacing:1px;
+    }
+    /* 三個不同顏色 */
+    .banner.one{background:#e53e3e;}
+    .banner.two{background:#38a169;}
+    .banner.three{background:#3182ce;}
+
+    .section-body{padding:32px; font-size:18px}
+    .section-body p{margin-bottom:16px; text-align:justify}
+
+    /* responsive adjustments */
+    @media (max-width:768px){
+      :root{--banner-height:320px; --nav-height:56px}
+      .nav .brand{font-size:16px}
+      .banner{font-size:20px}
+      .section-body{padding:20px; font-size:16px}
+    }
+  </style>
+</head>
+<body>
+  <header class="nav">
+    <div class="brand">我的網站</div>
+    <nav>
+      <a href="#section1">區段一</a>
+      <a href="#section2">區段二</a>
+      <a href="#section3">區段三</a>
+    </nav>
+  </header>
+
+  <main>
+    <section id="section1">
+      <div class="banner one">Banner — 區段一</div>
+      <div class="section-body">
+        <p>這是內容，這是內容，這是內容，這是內容，這是內容。這段落模擬一般文章內容，排版上更容易閱讀。</p>
+        <p>這是內容，這是內容，這是內容，這是內容，這是內容。這裡可以補充更多細節，讓整體視覺更完整。</p>
+        <p>這是內容，這是內容，這是內容，這是內容，這是內容。內容段落之間保持適度間距，便於閱讀。</p>
+      </div>
+    </section>
+
+    <section id="section2">
+      <div class="banner two">Banner — 區段二</div>
+      <div class="section-body">
+        <p>這是內容，這是內容，這是內容，這是內容，這是內容。不同段落能讓頁面層次更清晰。</p>
+        <p>這是內容，這是內容，這是內容，這是內容，這是內容。多段文字模擬正式文章結構。</p>
+        <p>這是內容，這是內容，這是內容，這是內容，這是內容。這樣的設計讓閱讀體驗更加舒適。</p>
+      </div>
+    </section>
+
+    <section id="section3">
+      <div class="banner three">Banner — 區段三</div>
+      <div class="section-body">
+        <p>這是內容，這是內容，這是內容，這是內容，這是內容。這段落排版為齊行對齊，整體更整齊。</p>
+        <p>這是內容，這是內容，這是內容，這是內容，這是內容。可以依需求替換成真實文字。</p>
+        <p>這是內容，這是內容，這是內容，這是內容，這是內容。頁面結構簡單明瞭，易於修改。</p>
+      </div>
+    </section>
+  </main>
+
+  <footer style="text-align:center; padding:24px 12px; color:#666; font-size:14px">
+    © 範例網頁
+  </footer>
+</body>
+</html>
