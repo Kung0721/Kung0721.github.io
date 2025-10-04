@@ -1,27 +1,63 @@
-#section1 div:first-child {
-      background-image: url("m1.png");
-      background-position: center;
-      background-repeat: no-repeat;
-      background-size: cover;
-  }
+/* 整體設定 */
+body {
+  margin: 0;
+  font-family: "Noto Sans TC", sans-serif;
+  background-color: #f8f9fa;
+}
 
-  #section2 div:first-child {
-      background-image: url("m2.png");
-      background-position: center;
-      background-repeat: no-repeat;
-      background-size: cover;
-  }
+/* 每個段落：左右排列 */
+section {
+  display: flex;
+  flex-direction: row; /* 左文字右圖片 */
+  min-height: 200vh;  /* 滾動距離夠長，sticky 才明顯 */
+}
 
-  #section3 div:first-child {
-      background-image: url("m3.png");
-      background-position: center;
-      background-repeat: no-repeat;
-      background-size: cover;
-  }
+/* 左邊文字區 */
+.text-col {
+  width: 50%;
+  padding: 80px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-color: #fff;
+  box-sizing: border-box;
+}
 
-  #section4 div:first-child {
-      background-image: url("m4.png");
-      background-position: center;
-      background-repeat: no-repeat;
-      background-size: cover;
-  }
+/* 右邊圖片區（sticky） */
+.sticky-top {
+  position: sticky;
+  top: 0;
+  width: 50%;
+  height: 100vh;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+/* 各段設定背景圖 */
+#section1 .sticky-top {
+  background-image: url("m1.png");
+}
+
+#section2 .sticky-top {
+  background-image: url("m2.png");
+}
+
+#section3 .sticky-top {
+  background-image: url("m3.png");
+}
+
+#section4 .sticky-top {
+  background-image: url("m4.png");
+}
+
+/* 文字微調 */
+h1 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+}
+
+p {
+  font-size: 1.1rem;
+  line-height: 1.8;
+}
